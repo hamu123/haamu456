@@ -1,0 +1,35 @@
+const Post = require('../models/post');
+exports.index = (req,res)=>{
+const{name,email,phone,message}=req.body;
+const contact = new contact({
+name:name;
+email:email;
+phone:phone;
+message:message;
+
+
+});
+contact.save().then((result)=>{
+console.log('List new Data');
+}).catch((error)=>{
+console.log(error)
+});
+res.redirect('/View/index');
+
+};
+exports.show = (req,res)=>{
+const name = req.body.name;
+const email = req.body.email;
+const phone = req.body.phone;
+const message = req.body.message;
+const contact = new contact({
+name:name;
+email:email;
+phone:phone;
+message:message;
+
+
+});
+res.redirect('/view/index');
+
+};
